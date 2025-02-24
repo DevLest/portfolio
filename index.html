@@ -14,6 +14,9 @@
 
     <!-- Custom CSS -->
     <link href="styles.css" rel="stylesheet">
+
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -41,9 +44,16 @@
             <div class="row">
                 <div class="col-lg-8" data-aos="fade-right">
                     <h1 class="display-4 fw-bold">Lester bon Biono</h1>
-                    <h2 class="h3 mb-4">Software Developer</h2>
-                    <p class="lead">Crafting elegant solutions through code</p>
-                    <a href="#contact" class="btn btn-light btn-lg mt-3">Get in Touch</a>
+                    <h2 class="h3 mb-4">Lead Software Engineer</h2>
+                    <p class="lead">Crafting innovative solutions through code with over 8 years of experience in full-stack development</p>
+                    <div class="contact-info-hero">
+                        <p><i class="fas fa-envelope"></i> lesterbonbiono@gmail.com</p>
+                        <p><i class="fab fa-whatsapp"></i> / <i class="fab fa-viber"></i> +63 9959730541</p>
+                    </div>
+                    <div class="mt-4">
+                        <a href="#contact" class="btn btn-light btn-lg me-3">Get in Touch</a>
+                        <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,18 +65,143 @@
             <h2 class="text-center mb-5" data-aos="fade-up">About Me</h2>
             <div class="row">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <h3>Who I Am</h3>
-                    <p>I'm a passionate software developer with expertise in creating robust and scalable applications. I love turning complex problems into simple, beautiful, and intuitive solutions.</p>
+                    <h3>Professional Summary</h3>
+                    <p class="lead">I am a highly skilled Software Engineer specializing in backend development and team leadership, with a proven track record of delivering innovative solutions across diverse industries.</p>
+                    <p>With extensive experience in PHP, Laravel, VueJS, and various other technologies, I excel in:</p>
+                    <ul>
+                        <li>Full-stack development and system architecture</li>
+                        <li>DevOps and cloud infrastructure management</li>
+                        <li>Team leadership and project management</li>
+                        <li>Complex API integrations and payment systems</li>
+                    </ul>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <h3>Skills</h3>
-                    <div class="skill-badges">
-                        <span class="skill-badge">JavaScript</span>
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">React</span>
-                        <span class="skill-badge">Node.js</span>
-                        <span class="skill-badge">SQL</span>
-                        <span class="skill-badge">Git</span>
+                    <h3>Technical Expertise</h3>
+                    <div class="skill-categories">
+                        <div class="mb-4">
+                            <h5>Backend Development</h5>
+                            <div class="skill-badges">
+                                <span class="skill-badge">PHP</span>
+                                <span class="skill-badge">Laravel</span>
+                                <span class="skill-badge">Node.js</span>
+                                <span class="skill-badge">SlimPHP</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h5>Frontend Development</h5>
+                            <div class="skill-badges">
+                                <span class="skill-badge">Vue.js</span>
+                                <span class="skill-badge">JavaScript</span>
+                                <span class="skill-badge">HTML/CSS</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h5>Database & Infrastructure</h5>
+                            <div class="skill-badges">
+                                <span class="skill-badge">MySQL</span>
+                                <span class="skill-badge">MongoDB</span>
+                                <span class="skill-badge">AWS</span>
+                                <span class="skill-badge">DevOps</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>Lead Software Engineer</h4>
+                    <h5>Catch A Guide</h5>
+                    <p class="text-muted">Jul 2024 - Present</p>
+                    <p>Full stack Laravel Developer managing all tech-related concerns of the company and website.</p>
+                    <div class="tech-stack">
+                        <small>Technologies: Laravel, PHP, DevOps, MySQL, API, Ubuntu, CentOS, AI</small>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>Software Engineer</h4>
+                    <h5>Rohring Results</h5>
+                    <p class="text-muted">Dec 2023 - Jan 2025</p>
+                    <p>Team Lead of 10 Developers for a marketing platform. Performed AWS DevOps tasks.</p>
+                    <div class="tech-stack">
+                        <small>Technologies: Laravel, PHP, VueJS, AWS, MySQL, WebSocket, Third-party API Integration, Payment Integration, Ubuntu, AI</small>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>PHP Backend Developer</h4>
+                    <h5>Cloversoft-SolutionsInc</h5>
+                    <p class="text-muted">Apr 2021 - Dec 2023</p>
+                    <p>Specialized in native PHP backend development for API integration and related PHP projects.</p>
+                    <div class="tech-stack">
+                        <small>Technologies: PHP, MySQL, API, Laravel, NodeJS, React, Payment Integration</small>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>Backend Developer</h4>
+                    <h5>Transdirect</h5>
+                    <p class="text-muted">Mar 2023 - Aug 2023</p>
+                    <p>Worked with Lithium PHP framework and WordPress templates for an Australian logistics company.</p>
+                    <div class="tech-stack">
+                        <small>Technologies: PHP, MySQL, API, Lithium, WordPress</small>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>Software Developer</h4>
+                    <h5>G. O. Green Enterprises, Inc.</h5>
+                    <p class="text-muted">Oct 2018 - Feb 2023</p>
+                    <p>Developed marketplace integrations for Amazon, Houzz, eBay, and Walmart for a US-based plumbing supplies company.</p>
+                    <div class="tech-stack">
+                        <small>Technologies: PHP, MySQL, Symfony, Laravel, MongoDB, AWS, Java, SlimPHP, Linux, Magento, Ubuntu, Lumen</small>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>Backend Developer</h4>
+                    <h5>Bywave Pty Ltd</h5>
+                    <p class="text-muted">Jun 2022 - Aug 2022</p>
+                    <p>Maintained WordPress and Lithium PHP framework for logistics bookings and quote calculations.</p>
+                    <div class="tech-stack">
+                        <small>Technologies: PHP, MySQL, API, Lithium</small>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>Software Developer</h4>
+                    <h5>KrishnaStore.com</h5>
+                    <p class="text-muted">Apr 2021 - Jun 2021</p>
+                    <p>Troubleshot eCommerce site and managed various projects including a music streaming platform.</p>
+                    <div class="tech-stack">
+                        <small>Technologies: PHP, MySQL, API, WordPress</small>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>Freelance Programmer</h4>
+                    <h5>Self-Employed</h5>
+                    <p class="text-muted">Jan 2018 - Present</p>
+                    <p>Delivered custom software solutions across diverse industries including accounting, casino/gambling, retail, medical, banking, and logistics.</p>
+                    <div class="tech-stack">
+                        <small>Technologies: PHP, Laravel, NodeJS, SlimPHP, LithiumPHP, VueJS, MySQL, MongoDB, AWS, WordPress, Magento, Lumen</small>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <h4>IT Staff / Programmer</h4>
+                    <h5>VCY Group</h5>
+                    <p class="text-muted">Mar 2016 - Oct 2018</p>
+                    <p>SAP ABAP Programmer and IT technical support. Also worked as a photographer.</p>
+                    <div class="tech-stack">
+                        <small>Technologies: PHP, MySQL, SAP ABAP, Laravel</small>
                     </div>
                 </div>
             </div>
@@ -100,17 +235,35 @@
             <h2 class="text-center mb-5" data-aos="fade-up">Get in Touch</h2>
             <div class="row">
                 <div class="col-lg-6 mx-auto">
-                    <form class="contact-form" data-aos="fade-up">
+                    <div class="contact-info text-center mb-5" data-aos="fade-up">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <h5>Email</h5>
+                            <a href="mailto:lesterbonbiono@gmail.com">lesterbonbiono@gmail.com</a>
+                        </div>
+                        <div class="contact-item mt-4">
+                            <i class="fab fa-whatsapp"></i> / <i class="fab fa-viber"></i>
+                            <h5>WhatsApp / Viber</h5>
+                            <a href="tel:+639959730541">+63 9959730541</a>
+                        </div>
+                    </div>
+                    <form id="contactForm" class="contact-form" data-aos="fade-up">
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Your Name">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary" id="submitButton">
+                            <span>Send Message</span>
+                            <div class="spinner-border spinner-border-sm ms-2 d-none" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </button>
+                        <div class="alert mt-3 d-none" id="alertMessage" role="alert"></div>
                     </form>
                 </div>
             </div>
@@ -125,7 +278,7 @@
                 <a href="#"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
-            <p>&copy; 2024 Lester bon Biono. All rights reserved.</p>
+            <p>&copy; 2025 Lester bon Biono. All rights reserved.</p>
         </div>
     </footer>
 
