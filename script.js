@@ -4,6 +4,116 @@ AOS.init({
     once: true
 });
 
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile nav functionality
+    const navbarToggle = document.getElementById('navbarToggle');
+    const mobileNav = document.getElementById('mobileNav');
+
+    if (navbarToggle && mobileNav) {
+        navbarToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking a link
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbarToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+    }
+
+    // Typing effect and animations
+    const text = "LESTER\nBON BIONO";
+    const typedName = document.getElementById('typed-name');
+    const contactDetails = document.getElementById('contact-details');
+    const location = document.querySelector('.hero-footer .location');
+    const role = document.querySelector('.hero-footer .role');
+    let charIndex = 0;
+
+    function typeWriter() {
+        if (charIndex < text.length) {
+            typedName.textContent += text.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeWriter, 100);
+        } else {
+            setTimeout(() => {
+                contactDetails.classList.add('visible');
+                setTimeout(() => {
+                    location.classList.add('animate');
+                    role.classList.add('animate');
+                }, 500);
+            }, 500);
+        }
+    }
+
+    typeWriter();
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            backToTopButton.classList.toggle('visible', window.scrollY > 300);
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
+// Initialize EmailJS
+emailjs.init('I-YFHStMwz3rLPTQ9');
+
+// Contact form handling
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const submitButton = document.getElementById('submitButton');
+        const spinner = submitButton.querySelector('.spinner-border');
+        const alertMessage = document.getElementById('alertMessage');
+
+        submitButton.disabled = true;
+        spinner.classList.remove('d-none');
+        alertMessage.classList.add('d-none');
+
+        const templateParams = {
+            from_name: document.getElementById('name').value,
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value,
+            reply_to: document.getElementById('email').value
+        };
+
+        emailjs.send('service_k50zcxm', 'template_8gixqxa', templateParams)
+            .then(() => {
+                alertMessage.textContent = 'Thank you for reaching out! I will get back to you soon.';
+                alertMessage.classList.remove('d-none', 'alert-danger');
+                alertMessage.classList.add('alert-success');
+                contactForm.reset();
+            })
+            .catch(error => {
+                alertMessage.textContent = 'Failed to send message. Please try again.';
+                alertMessage.classList.remove('d-none', 'alert-success');
+                alertMessage.classList.add('alert-danger');
+                console.error('EmailJS error:', error);
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                spinner.classList.add('d-none');
+            });
+    });
+}
+
 // Add smooth scrolling to all links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -51,62 +161,6 @@ document.body.addEventListener('touchmove', function(e) {
     }
 }, false);
 
-// Initialize EmailJS
-(function() {
-    emailjs.init('I-YFHStMwz3rLPTQ9');
-})();
-
-// Contact form handling
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    // Get the form elements
-    const submitButton = document.getElementById('submitButton');
-    const spinner = submitButton.querySelector('.spinner-border');
-    const buttonText = submitButton.querySelector('span');
-    const alertMessage = document.getElementById('alertMessage');
-
-    // Show loading state
-    submitButton.disabled = true;
-    spinner.classList.remove('d-none');
-    buttonText.textContent = 'Sending...';
-    alertMessage.classList.add('d-none');
-
-    // Prepare the email parameters to match your portfolio template
-    const templateParams = {
-        from_name: document.getElementById('name').value,
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value,
-        reply_to: document.getElementById('email').value,
-        to_email: 'lesterbonbiono@gmail.com'
-    };
-
-    // Send the email using your portfolio template
-    emailjs.send('service_k50zcxm', 'template_8gixqxa', templateParams)
-        .then(function() {
-            // Show success message
-            alertMessage.textContent = 'Thank you for reaching out! I will get back to you soon.';
-            alertMessage.classList.remove('d-none', 'alert-danger');
-            alertMessage.classList.add('alert-success');
-
-            // Reset form
-            document.getElementById('contactForm').reset();
-        }, function(error) {
-            // Show error message
-            alertMessage.textContent = 'Failed to send message. Please try again.';
-            alertMessage.classList.remove('d-none', 'alert-success');
-            alertMessage.classList.add('alert-danger');
-            console.error('EmailJS error:', error);
-        })
-        .finally(function() {
-            // Reset button state
-            submitButton.disabled = false;
-            spinner.classList.add('d-none');
-            buttonText.textContent = 'Send Message';
-        });
-});
-
 // Add loading animation to contact form
 document.querySelectorAll('.contact-form .form-control').forEach(input => {
     input.addEventListener('focus', function() {
@@ -118,4 +172,13 @@ document.querySelectorAll('.contact-form .form-control').forEach(input => {
             this.parentElement.classList.remove('focused');
         }
     });
+});
+
+// Parallax effect
+window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const parallaxImage = document.querySelector('.parallax-image');
+    if (parallaxImage) {
+        parallaxImage.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
 });

@@ -324,3 +324,555 @@ body {
         margin-bottom: 15px;
     }
 }
+
+
+/* Contact Section Styling */
+
+.contact-title {
+    color: #FF9F1C;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.connect-text {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    margin-top: 3rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #FF9F1C;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+}
+
+.contact-item .label {
+    color: #666;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.contact-item .value {
+    color: #000;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+
+/* Form Styling */
+
+.contact-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form label {
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.contact-form .form-control {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: #FF9F1C;
+    box-shadow: 0 0 0 3px rgba(255, 159, 28, 0.1);
+}
+
+.contact-form textarea.form-control {
+    min-height: 120px;
+}
+
+.btn-submit {
+    background: #000;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.btn-submit i {
+    margin-left: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #FF9F1C;
+    color: #fff;
+}
+
+.btn-submit:hover i {
+    transform: translateX(5px);
+}
+
+
+/* Mobile Responsiveness */
+
+@media (max-width: 768px) {
+    .connect-text {
+        font-size: 3rem;
+    }
+    .contact-form {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    .contact-info {
+        margin-top: 2rem;
+    }
+}
+
+
+/* Back to Top Button */
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+
+/* Hero Section with Parallax */
+
+.availability {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    color: #00ff00;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.availability::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #00ff00;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.hero-parallax {
+    position: relative;
+    height: 100vh;
+    background-color: #000;
+    color: white;
+    overflow: hidden;
+}
+
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 55px;
+    width: auto;
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover .logo-image {
+    opacity: 0.8;
+}
+
+.main-nav {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    z-index: 10;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #FF9F1C;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+}
+
+.name-wrapper {
+    margin-bottom: 100px;
+}
+
+.big-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 8vw;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin: 0;
+    white-space: pre;
+}
+
+.contact-details {
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.contact-details.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-details p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-details i {
+    color: #FF9F1C;
+    font-size: 1.1rem;
+}
+
+
+/* Combine WhatsApp and Viber icons */
+
+.contact-details p i+i {
+    margin-left: 5px;
+}
+
+.hero-footer {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-footer .location,
+.hero-footer .role {
+    opacity: 0;
+}
+
+.hero-footer .location.animate {
+    animation: slideFromRight 1s forwards;
+}
+
+.hero-footer .role.animate {
+    animation: slideFromLeft 1s forwards;
+}
+
+.parallax-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('your-image-url.jpg');
+    /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+
+/* Add this to your existing JavaScript for parallax effect */
+
+@media (max-width: 768px) {
+    .big-name {
+        font-size: 12vw;
+    }
+    .hero-footer {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 20px;
+    }
+    .hero-content {
+        padding: 0 20px;
+    }
+    .logo {
+        left: 20px;
+    }
+    .main-nav {
+        right: 20px;
+    }
+    .main-nav a {
+        margin-left: 15px;
+        font-size: 14px;
+    }
+    .logo-image {
+        height: 45px;
+    }
+}
+
+
+/* Add these animation keyframes */
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* Header and Navigation */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.main-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #FF9F1C;
+}
+
+
+/* Mobile Navigation */
+
+.navbar-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+    .main-nav {
+        display: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.95);
+        z-index: 999;
+        padding: 60px 20px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .mobile-nav.active {
+        display: flex;
+    }
+    .mobile-nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 24px;
+        transition: color 0.3s;
+    }
+    .mobile-nav a:hover {
+        color: #FF9F1C;
+    }
+    .contact-details p {
+        font-size: 1rem;
+        gap: 8px;
+    }
+    .contact-details i {
+        font-size: 1rem;
+    }
+    .hero-footer {
+        position: relative;
+        bottom: 0;
+        padding: 20px;
+        margin-top: 30px;
+    }
+    .hero-footer .location,
+    .hero-footer .role {
+        font-size: 12px;
+        letter-spacing: 1px;
+        line-height: 1.4;
+    }
+}
+
+
+/* Extra small devices */
+
+@media (max-width: 375px) {
+    .hero-content {
+        padding: 0 15px;
+    }
+    .big-name {
+        font-size: 14vw;
+    }
+    .contact-details p {
+        font-size: 0.85rem;
+    }
+    .hero-footer {
+        margin-top: 20px;
+    }
+    .hero-footer .location,
+    .hero-footer .role {
+        font-size: 11px;
+    }
+    .logo-image {
+        height: 40px;
+    }
+}
+
+
+/* Landscape mode */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-content {
+        padding: 60px 20px 20px;
+    }
+    .big-name {
+        font-size: 8vw;
+    }
+    .contact-details {
+        margin-top: 15px;
+    }
+    .hero-footer {
+        margin-top: 15px;
+    }
+}
