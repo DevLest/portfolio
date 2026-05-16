@@ -4,303 +4,657 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lester bon Biono - Software Developer</title>
+    <title>Lester bon Biono — Lead Developer · Software Engineer</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link href="styles.css" rel="stylesheet">
 
-    <!-- EmailJS CDN -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-    <!-- Hero Section with Parallax -->
-    <section class="hero-parallax">
-        <div class="header">
-            <a href="/" class="logo">
-                <img src="logo-bnw.png" alt="LBB Logo" class="logo-image">
+    <header class="site-header site-header--hero" id="siteHeader" aria-label="Primary">
+        <div class="site-header__inner">
+            <a href="#home" class="site-header__logo">
+                <img src="logo-bnw.png" alt="Lester bon Biono" class="site-header__logo-img site-header__logo-img--dark">
+                <img src="logo-orange.png" alt="" class="site-header__logo-img site-header__logo-img--light" aria-hidden="true">
+                <span class="site-header__wordmark visually-hidden">Lester bon Biono</span>
             </a>
-            <nav class="main-nav">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+            <nav class="site-nav" aria-label="Page sections">
+                <a href="#home" data-nav-link>Home</a>
+                <a href="#about" data-nav-link>About</a>
+                <a href="#experience" data-nav-link>Experience</a>
+                <a href="#projects" data-nav-link>Projects</a>
+                <a href="#contact" data-nav-link>Contact</a>
             </nav>
-            <!-- Mobile nav toggle button -->
-            <button class="navbar-toggle" id="navbarToggle">
-                <span class="navbar-toggle-icon"></span>
+            <button type="button" class="site-nav__toggle" id="navbarToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+                <span class="site-nav__toggle-bar" aria-hidden="true"></span>
             </button>
         </div>
-
-        <!-- Mobile nav menu -->
-        <div class="mobile-nav" id="mobileNav">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+        <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+            <a href="#home" data-mobile-link>Home</a>
+            <a href="#about" data-mobile-link>About</a>
+            <a href="#experience" data-mobile-link>Experience</a>
+            <a href="#projects" data-mobile-link>Projects</a>
+            <a href="#contact" data-mobile-link>Contact</a>
         </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-parallax" id="home">
+        <div class="hero-parallax__grid" aria-hidden="true"></div>
+        <div class="hero-parallax__glow hero-parallax__glow--one" aria-hidden="true"></div>
+        <div class="hero-parallax__glow hero-parallax__glow--two" aria-hidden="true"></div>
 
         <div class="hero-content">
             <div class="name-wrapper">
+                <p class="hero-kicker animate-in" style="--delay: 0.05s">NestJS · Laravel · Vue · Delivery · Leadership</p>
                 <h1 class="big-name" id="typed-name"></h1>
                 <div class="contact-details" id="contact-details">
-                    <p><i class="fas fa-envelope"></i> lesterbonbiono@gmail.com</p>
-                    <p><i class="fab fa-whatsapp"></i> / <i class="fab fa-viber"></i> +63 9959730541</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> lesterbonbiono@gmail.com</p>
+                    <p><i class="fab fa-whatsapp" aria-hidden="true"></i> / <i class="fab fa-viber" aria-hidden="true"></i> +63 9919697516</p>
                 </div>
             </div>
             <div class="hero-footer">
-                <div class="location">BASED IN PHILIPPINES</div>
-                <div class="role">LEAD SOFTWARE ENGINEER + FULL STACK DEVELOPER</div>
+                <div class="location">Based in Philippines</div>
+                <div class="role">Lead developer · NestJS · Full stack</div>
             </div>
         </div>
+        <a href="#about" class="hero-scroll-hint" aria-label="Scroll to about section">
+            <span class="hero-scroll-hint__label">Explore</span>
+            <span class="hero-scroll-hint__mouse" aria-hidden="true"></span>
+        </a>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
+    <!-- About -->
+    <section id="about" class="section section--surface">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">About Me</h2>
-            <div class="row">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h3>Professional Summary</h3>
-                    <p class="lead">I am a highly skilled Software Engineer specializing in backend development and team leadership, with a proven track record of delivering innovative solutions across diverse industries.</p>
-                    <p>With extensive experience in PHP, Laravel, VueJS, and various other technologies, I excel in:</p>
-                    <ul>
-                        <li>Full-stack development and system architecture</li>
-                        <li>DevOps and cloud infrastructure management</li>
-                        <li>Team leadership and project management</li>
-                        <li>Complex API integrations and payment systems</li>
-                    </ul>
+            <header class="section-header text-center" data-aos="fade-up">
+                <p class="section-eyebrow">Profile</p>
+                <h2 class="section-title">About</h2>
+                <p class="section-lead mx-auto">Backend-leaning engineer and team lead — shipping end-to-end web platforms with PHP/Laravel, Node, and NestJS, plus DevOps, integrations, and delivery under tight timelines.</p>
+            </header>
+            <div class="row g-4 g-lg-5 align-items-start mt-2">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="surface-card surface-card--lift">
+                        <h3 class="surface-card__title">Professional summary</h3>
+                        <p class="lead text-secondary-emphasis mb-3">Highly skilled software engineer with strong backend experience, team leadership, and a record of delivering reliable systems across SaaS, logistics, eCommerce, and regulated domains.</p>
+                        <p class="mb-3">Strengths teams rely on:</p>
+                        <ul class="check-list">
+                            <li>Full-cycle delivery — PHP/Laravel, Vue.js, NestJS, Node.js</li>
+                            <li>DevOps, databases, REST APIs, payments, and marketplace integrations</li>
+                            <li>Leading engineers — roadmap alignment, quality, and velocity</li>
+                            <li>Continuous learning on emerging tooling (AI-assisted workflows, Docker, cloud)</li>
+                        </ul>
+                        <hr class="my-4 opacity-25">
+                        <p class="small text-secondary-emphasis mb-1"><strong class="text-body">Education</strong> — BS Information Technology, Binalbagan Catholic College (completed 2016)</p>
+                        <p class="small text-secondary-emphasis mb-0"><strong class="text-body">Languages</strong> — English, Filipino</p>
+                    </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h3>Technical Expertise</h3>
-                    <div class="skill-categories">
-                        <div class="mb-4">
-                            <h5>Backend Development</h5>
-                            <div class="skill-badges">
-                                <span class="skill-badge">PHP</span>
-                                <span class="skill-badge">Laravel</span>
-                                <span class="skill-badge">Node.js</span>
-                                <span class="skill-badge">SlimPHP</span>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="surface-card surface-card--lift">
+                        <h3 class="surface-card__title">Technical expertise</h3>
+                        <div class="skill-categories">
+                            <div class="skill-group">
+                                <h5>Backend</h5>
+                                <div class="skill-badges">
+                                    <span class="skill-badge">PHP</span>
+                                    <span class="skill-badge">Laravel</span>
+                                    <span class="skill-badge">NestJS</span>
+                                    <span class="skill-badge">Node.js</span>
+                                    <span class="skill-badge">SlimPHP</span>
+                                </div>
+                            </div>
+                            <div class="skill-group">
+                                <h5>Frontend</h5>
+                                <div class="skill-badges">
+                                    <span class="skill-badge">Vue.js</span>
+                                    <span class="skill-badge">JavaScript</span>
+                                    <span class="skill-badge">HTML/CSS</span>
+                                </div>
+                            </div>
+                            <div class="skill-group mb-0">
+                                <h5>Data &amp; infrastructure</h5>
+                                <div class="skill-badges">
+                                    <span class="skill-badge">MySQL</span>
+                                    <span class="skill-badge">MongoDB</span>
+                                    <span class="skill-badge">Redis</span>
+                                    <span class="skill-badge">Docker</span>
+                                    <span class="skill-badge">AWS</span>
+                                    <span class="skill-badge">DevOps</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="mb-4">
-                            <h5>Frontend Development</h5>
-                            <div class="skill-badges">
-                                <span class="skill-badge">Vue.js</span>
-                                <span class="skill-badge">JavaScript</span>
-                                <span class="skill-badge">HTML/CSS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section section--muted">
+        <div class="container">
+            <header class="section-header text-center" data-aos="fade-up">
+                <p class="section-eyebrow">Career</p>
+                <h2 class="section-title">Experience</h2>
+                <p class="section-lead mx-auto">Recent roles and concurrent engagements — aligned with my JobStreet resume (reverse chronological).</p>
+            </header>
+
+            <div class="experience-list mt-5">
+                <!-- Sun Asterisk Philippines -->
+                <article class="exp-card" data-exp-card data-aos="fade-up">
+                    <button type="button" class="exp-card__toggle" aria-expanded="true" id="exp-toggle-1" aria-controls="exp-panel-1">
+                        <span class="exp-card__timeline-dot" aria-hidden="true"></span>
+                        <span class="exp-card__heading">
+                            <span class="exp-card__company">Sun Asterisk Philippines</span>
+                            <span class="exp-card__range">Mar 2025 — Present</span>
+                        </span>
+                        <span class="exp-card__roles-preview">Lead Developer</span>
+                        <span class="exp-card__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="exp-card__panel" id="exp-panel-1" role="region" aria-labelledby="exp-toggle-1">
+                        <ol class="role-track">
+                            <li class="role-step">
+                                <div class="role-step__meta">
+                                    <span class="role-step__title">Lead Developer</span>
+                                    <span class="role-step__dates">Mar 2025 — Present</span>
+                                </div>
+                                <div class="role-step__desc">
+                                    <p class="mb-0">Full-stack lead web developer for software products — owning technical delivery across services, persistence, and deployment.</p>
+                                </div>
+                            </li>
+                        </ol>
+                        <div class="tech-stack">
+                            <span class="tech-stack__label">Stack</span>
+                            <span class="tech-stack__tags">NestJS · Node.js · MySQL · Docker · Redis</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Freelance -->
+                <article class="exp-card" data-exp-card data-aos="fade-up" data-aos-delay="40">
+                    <button type="button" class="exp-card__toggle" aria-expanded="false" id="exp-toggle-2" aria-controls="exp-panel-2">
+                        <span class="exp-card__timeline-dot" aria-hidden="true"></span>
+                        <span class="exp-card__heading">
+                            <span class="exp-card__company">Freelance</span>
+                            <span class="exp-card__range">Jan 2018 — Present</span>
+                        </span>
+                        <span class="exp-card__roles-preview">Freelance programmer</span>
+                        <span class="exp-card__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="exp-card__panel" id="exp-panel-2" role="region" aria-labelledby="exp-toggle-2" hidden>
+                        <ol class="role-track">
+                            <li class="role-step">
+                                <div class="role-step__meta">
+                                    <span class="role-step__title">Freelance Programmer</span>
+                                    <span class="role-step__dates">Jan 2018 — Present</span>
+                                </div>
+                                <div class="role-step__desc">
+                                    <p class="mb-3">Independent delivery across accounting, regulated gaming, retail, healthcare, banking, logistics, and eCommerce — tailored backends and integrations per client.</p>
+                                    <ul class="role-step-list">
+                                        <li>Accounting systems — reporting workflows and dependable data pipelines</li>
+                                        <li>Gaming platforms — secure payments, real-time APIs, and operational tooling</li>
+                                        <li>Retail eCommerce — scalable storefronts and third-party integrations</li>
+                                        <li>Healthcare — scheduling and secure handling of operational records</li>
+                                        <li>Banking-oriented apps — hardened integrations for transactional flows</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ol>
+                        <div class="tech-stack">
+                            <span class="tech-stack__label">Stack</span>
+                            <span class="tech-stack__tags">PHP · Laravel · Node.js · Vue.js · SlimPHP · Lithium PHP · Symfony · WordPress · Magento · Lumen · MySQL · MongoDB · AWS · OAuth · Payments APIs</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Catch A Guide -->
+                <article class="exp-card" data-exp-card data-aos="fade-up" data-aos-delay="80">
+                    <button type="button" class="exp-card__toggle" aria-expanded="false" id="exp-toggle-3" aria-controls="exp-panel-3">
+                        <span class="exp-card__timeline-dot" aria-hidden="true"></span>
+                        <span class="exp-card__heading">
+                            <span class="exp-card__company">Catch A Guide</span>
+                            <span class="exp-card__range">Jul 2024 — Mar 2025</span>
+                        </span>
+                        <span class="exp-card__roles-preview">Lead Software Engineer</span>
+                        <span class="exp-card__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="exp-card__panel" id="exp-panel-3" role="region" aria-labelledby="exp-toggle-3" hidden>
+                        <ol class="role-track">
+                            <li class="role-step">
+                                <div class="role-step__meta">
+                                    <span class="role-step__title">Lead Software Engineer</span>
+                                    <span class="role-step__dates">Jul 2024 — Mar 2025</span>
+                                </div>
+                                <p class="role-step__desc">Full-stack Laravel developer for a fishing-travel marketplace — owned engineering decisions, releases, and ongoing technical operations for the product.</p>
+                            </li>
+                        </ol>
+                        <div class="tech-stack">
+                            <span class="tech-stack__label">Stack</span>
+                            <span class="tech-stack__tags">Laravel · PHP · DevOps · MySQL · APIs · Ubuntu · CentOS · AI-assisted workflows</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Rohring Results -->
+                <article class="exp-card" data-exp-card data-aos="fade-up">
+                    <button type="button" class="exp-card__toggle" aria-expanded="false" id="exp-toggle-4" aria-controls="exp-panel-4">
+                        <span class="exp-card__timeline-dot" aria-hidden="true"></span>
+                        <span class="exp-card__heading">
+                            <span class="exp-card__company">Rohring Results</span>
+                            <span class="exp-card__range">Dec 2023 — Jan 2025</span>
+                        </span>
+                        <span class="exp-card__roles-preview">Software Engineer · Team lead</span>
+                        <span class="exp-card__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="exp-card__panel" id="exp-panel-4" role="region" aria-labelledby="exp-toggle-4" hidden>
+                        <ol class="role-track">
+                            <li class="role-step">
+                                <div class="role-step__meta">
+                                    <span class="role-step__title">Software Engineer — Team Lead</span>
+                                    <span class="role-step__dates">Dec 2023 — Jan 2025</span>
+                                </div>
+                                <p class="role-step__desc">Led ten engineers building a Laravel/Vue marketing platform — delivery governance plus hands-on backend work and AWS DevOps responsibilities.</p>
+                            </li>
+                        </ol>
+                        <div class="tech-stack">
+                            <span class="tech-stack__label">Stack</span>
+                            <span class="tech-stack__tags">Laravel · PHP · Vue.js · AWS · MySQL · WebSockets · Payments · Third-party APIs · Ubuntu</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Cloversoft -->
+                <article class="exp-card" data-exp-card data-aos="fade-up">
+                    <button type="button" class="exp-card__toggle" aria-expanded="false" id="exp-toggle-5" aria-controls="exp-panel-5">
+                        <span class="exp-card__timeline-dot" aria-hidden="true"></span>
+                        <span class="exp-card__heading">
+                            <span class="exp-card__company">Cloversoft Solutions Inc.</span>
+                            <span class="exp-card__range">Apr 2021 — Dec 2023</span>
+                        </span>
+                        <span class="exp-card__roles-preview">PHP Backend Developer</span>
+                        <span class="exp-card__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="exp-card__panel" id="exp-panel-5" role="region" aria-labelledby="exp-toggle-5" hidden>
+                        <ol class="role-track">
+                            <li class="role-step">
+                                <div class="role-step__meta">
+                                    <span class="role-step__title">PHP Backend Developer</span>
+                                    <span class="role-step__dates">Apr 2021 — Dec 2023</span>
+                                </div>
+                                <p class="role-step__desc">Native PHP backends focused on APIs and integrations — collaborated across Laravel, Node.js, and React where stacks overlapped.</p>
+                            </li>
+                        </ol>
+                        <div class="tech-stack">
+                            <span class="tech-stack__label">Stack</span>
+                            <span class="tech-stack__tags">PHP · MySQL · APIs · Laravel · Node.js · React · Payments · Ubuntu</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Transdirect -->
+                <article class="exp-card" data-exp-card data-aos="fade-up">
+                    <button type="button" class="exp-card__toggle" aria-expanded="false" id="exp-toggle-6" aria-controls="exp-panel-6">
+                        <span class="exp-card__timeline-dot" aria-hidden="true"></span>
+                        <span class="exp-card__heading">
+                            <span class="exp-card__company">Transdirect</span>
+                            <span class="exp-card__range">Mar 2023 — Aug 2023</span>
+                        </span>
+                        <span class="exp-card__roles-preview">Backend Developer</span>
+                        <span class="exp-card__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="exp-card__panel" id="exp-panel-6" role="region" aria-labelledby="exp-toggle-6" hidden>
+                        <ol class="role-track">
+                            <li class="role-step">
+                                <div class="role-step__meta">
+                                    <span class="role-step__title">Backend Developer</span>
+                                    <span class="role-step__dates">Mar 2023 — Aug 2023</span>
+                                </div>
+                                <p class="role-step__desc">Lithium PHP and WordPress delivery for an Australian logistics operator — quoting, bookings, and customer-facing flows.</p>
+                            </li>
+                        </ol>
+                        <div class="tech-stack">
+                            <span class="tech-stack__label">Stack</span>
+                            <span class="tech-stack__tags">PHP · MySQL · APIs · Lithium · WordPress</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- G. O. Green -->
+                <article class="exp-card" data-exp-card data-aos="fade-up">
+                    <button type="button" class="exp-card__toggle" aria-expanded="false" id="exp-toggle-7" aria-controls="exp-panel-7">
+                        <span class="exp-card__timeline-dot" aria-hidden="true"></span>
+                        <span class="exp-card__heading">
+                            <span class="exp-card__company">G. O. Green Enterprises, Inc.</span>
+                            <span class="exp-card__range">Oct 2018 — Feb 2023</span>
+                        </span>
+                        <span class="exp-card__roles-preview">Software Developer</span>
+                        <span class="exp-card__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="exp-card__panel" id="exp-panel-7" role="region" aria-labelledby="exp-toggle-7" hidden>
+                        <ol class="role-track">
+                            <li class="role-step">
+                                <div class="role-step__meta">
+                                    <span class="role-step__title">Software Developer</span>
+                                    <span class="role-step__dates">Oct 2018 — Feb 2023</span>
+                                </div>
+                                <p class="role-step__desc">Plumbing-supplies business serving the US — marketplace integrations with Amazon, Houzz, eBay, and Walmart plus operational tooling.</p>
+                            </li>
+                        </ol>
+                        <div class="tech-stack">
+                            <span class="tech-stack__label">Stack</span>
+                            <span class="tech-stack__tags">PHP · MySQL · Symfony · Laravel · MongoDB · AWS · Java · SlimPHP · Magento · Ubuntu · Lumen · APIs</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Bywave -->
+                <article class="exp-card" data-exp-card data-aos="fade-up">
+                    <button type="button" class="exp-card__toggle" aria-expanded="false" id="exp-toggle-8" aria-controls="exp-panel-8">
+                        <span class="exp-card__timeline-dot" aria-hidden="true"></span>
+                        <span class="exp-card__heading">
+                            <span class="exp-card__company">Bywave Pty Ltd</span>
+                            <span class="exp-card__range">Jun 2022 — Aug 2022</span>
+                        </span>
+                        <span class="exp-card__roles-preview">Backend Developer</span>
+                        <span class="exp-card__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="exp-card__panel" id="exp-panel-8" role="region" aria-labelledby="exp-toggle-8" hidden>
+                        <ol class="role-track">
+                            <li class="role-step">
+                                <div class="role-step__meta">
+                                    <span class="role-step__title">Backend Developer</span>
+                                    <span class="role-step__dates">Jun 2022 — Aug 2022</span>
+                                </div>
+                                <p class="role-step__desc">WordPress and Lithium PHP maintenance — bookings and automated quote calculations for cargo and parcel logistics.</p>
+                            </li>
+                        </ol>
+                        <div class="tech-stack">
+                            <span class="tech-stack__label">Stack</span>
+                            <span class="tech-stack__tags">PHP · MySQL · APIs · Lithium · WordPress</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- KrishnaStore -->
+                <article class="exp-card" data-exp-card data-aos="fade-up">
+                    <button type="button" class="exp-card__toggle" aria-expanded="false" id="exp-toggle-9" aria-controls="exp-panel-9">
+                        <span class="exp-card__timeline-dot" aria-hidden="true"></span>
+                        <span class="exp-card__heading">
+                            <span class="exp-card__company">KrishnaStore.com</span>
+                            <span class="exp-card__range">Apr 2021 — Jun 2021</span>
+                        </span>
+                        <span class="exp-card__roles-preview">Software Developer</span>
+                        <span class="exp-card__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="exp-card__panel" id="exp-panel-9" role="region" aria-labelledby="exp-toggle-9" hidden>
+                        <ol class="role-track">
+                            <li class="role-step">
+                                <div class="role-step__meta">
+                                    <span class="role-step__title">Software Developer</span>
+                                    <span class="role-step__dates">Apr 2021 — Jun 2021</span>
+                                </div>
+                                <p class="role-step__desc">eCommerce troubleshooting for spiritual goods shipped from India — plus ancillary builds including a streaming-style audio/music experience.</p>
+                            </li>
+                        </ol>
+                        <div class="tech-stack">
+                            <span class="tech-stack__label">Stack</span>
+                            <span class="tech-stack__tags">PHP · MySQL · APIs · WordPress</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- VCY Group -->
+                <article class="exp-card" data-exp-card data-aos="fade-up">
+                    <button type="button" class="exp-card__toggle" aria-expanded="false" id="exp-toggle-10" aria-controls="exp-panel-10">
+                        <span class="exp-card__timeline-dot" aria-hidden="true"></span>
+                        <span class="exp-card__heading">
+                            <span class="exp-card__company">VCY Group</span>
+                            <span class="exp-card__range">Mar 2016 — Oct 2018</span>
+                        </span>
+                        <span class="exp-card__roles-preview">IT Staff · Programmer</span>
+                        <span class="exp-card__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="exp-card__panel" id="exp-panel-10" role="region" aria-labelledby="exp-toggle-10" hidden>
+                        <ol class="role-track">
+                            <li class="role-step">
+                                <div class="role-step__meta">
+                                    <span class="role-step__title">IT Staff / Programmer</span>
+                                    <span class="role-step__dates">Mar 2016 — Oct 2018</span>
+                                </div>
+                                <p class="role-step__desc">SAP ABAP programming and SAP technical support — paired with broader IT support responsibilities and photography for internal campaigns.</p>
+                            </li>
+                        </ol>
+                        <div class="tech-stack">
+                            <span class="tech-stack__label">Stack</span>
+                            <span class="tech-stack__tags">SAP ABAP · PHP · MySQL · Laravel</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section section--surface">
+        <div class="container">
+            <header class="section-header text-center" data-aos="fade-up">
+                <p class="section-eyebrow">Selected work</p>
+                <h2 class="section-title">Projects</h2>
+                <p class="section-lead mx-auto">Live platforms I’ve shipped or sustained — homepage captures at 1280×720 for a consistent preview.</p>
+            </header>
+            <div class="row g-4 mt-2">
+                <div class="col-md-6 col-xl-4" data-aos="fade-up">
+                    <article class="project-card card border-0 h-100">
+                        <a href="https://www.plumbersstock.com/" class="project-card__link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-card__media ratio ratio-16x9">
+                                <img src="assets/project-screenshots/plumbersstock.jpg" width="1280" height="720" class="project-card__img" alt="PlumbersStock homepage screenshot" loading="lazy" decoding="async">
                             </div>
+                        </a>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold">PlumbersStock</h5>
+                            <p class="card-text text-secondary flex-grow-1 small">Large plumbing &amp; bathroom marketplace — catalog, checkout, and integrations at scale.</p>
+                            <a href="https://www.plumbersstock.com/" class="btn btn-outline-dark btn-sm rounded-pill align-self-start mt-2" target="_blank" rel="noopener noreferrer">Visit site <span class="fa-solid fa-arrow-up-right-from-square ms-1 small" aria-hidden="true"></span></a>
                         </div>
-                        <div class="mb-4">
-                            <h5>Database & Infrastructure</h5>
-                            <div class="skill-badges">
-                                <span class="skill-badge">MySQL</span>
-                                <span class="skill-badge">MongoDB</span>
-                                <span class="skill-badge">AWS</span>
-                                <span class="skill-badge">DevOps</span>
+                    </article>
+                </div>
+                <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="40">
+                    <article class="project-card card border-0 h-100">
+                        <a href="https://www.adamsandco.net/" class="project-card__link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-card__media ratio ratio-16x9">
+                                <img src="assets/project-screenshots/adamsandco.jpg" width="1280" height="720" class="project-card__img" alt="Adams &amp; Company homepage screenshot" loading="lazy" decoding="async">
                             </div>
+                        </a>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold">Adams &amp; Company</h5>
+                            <p class="card-text text-secondary flex-grow-1 small">Wholesale home décor brand — seasonal collections, buyer flows, and catalog merchandising.</p>
+                            <a href="https://www.adamsandco.net/" class="btn btn-outline-dark btn-sm rounded-pill align-self-start mt-2" target="_blank" rel="noopener noreferrer">Visit site <span class="fa-solid fa-arrow-up-right-from-square ms-1 small" aria-hidden="true"></span></a>
                         </div>
-                    </div>
+                    </article>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item" data-aos="fade-up">
-                    <h4>Lead Software Engineer</h4>
-                    <h5>Catch A Guide</h5>
-                    <p class="text-muted">Jul 2024 - Present</p>
-                    <p>Full stack Laravel Developer managing all tech-related concerns of the company and website.</p>
-                    <div class="tech-stack">
-                        <small>Technologies: Laravel, PHP, DevOps, MySQL, API, Ubuntu, CentOS, AI</small>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-up">
-                    <h4>Software Engineer</h4>
-                    <h5>Rohring Results</h5>
-                    <p class="text-muted">Dec 2023 - Jan 2025</p>
-                    <p>Team Lead of 10 Developers for a marketing platform. Performed AWS DevOps tasks.</p>
-                    <div class="tech-stack">
-                        <small>Technologies: Laravel, PHP, VueJS, AWS, MySQL, WebSocket, Third-party API Integration, Payment Integration, Ubuntu, AI</small>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-up">
-                    <h4>PHP Backend Developer</h4>
-                    <h5>Cloversoft-SolutionsInc</h5>
-                    <p class="text-muted">Apr 2021 - Dec 2023</p>
-                    <p>Specialized in native PHP backend development for API integration and related PHP projects.</p>
-                    <div class="tech-stack">
-                        <small>Technologies: PHP, MySQL, API, Laravel, NodeJS, React, Payment Integration</small>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-up">
-                    <h4>Backend Developer</h4>
-                    <h5>Transdirect</h5>
-                    <p class="text-muted">Mar 2023 - Aug 2023</p>
-                    <p>Worked with Lithium PHP framework and WordPress templates for an Australian logistics company.</p>
-                    <div class="tech-stack">
-                        <small>Technologies: PHP, MySQL, API, Lithium, WordPress</small>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-up">
-                    <h4>Software Developer</h4>
-                    <h5>G. O. Green Enterprises, Inc.</h5>
-                    <p class="text-muted">Oct 2018 - Feb 2023</p>
-                    <p>Developed marketplace integrations for Amazon, Houzz, eBay, and Walmart for a US-based plumbing supplies company.</p>
-                    <div class="tech-stack">
-                        <small>Technologies: PHP, MySQL, Symfony, Laravel, MongoDB, AWS, Java, SlimPHP, Linux, Magento, Ubuntu, Lumen</small>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-up">
-                    <h4>Backend Developer</h4>
-                    <h5>Bywave Pty Ltd</h5>
-                    <p class="text-muted">Jun 2022 - Aug 2022</p>
-                    <p>Maintained WordPress and Lithium PHP framework for logistics bookings and quote calculations.</p>
-                    <div class="tech-stack">
-                        <small>Technologies: PHP, MySQL, API, Lithium</small>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-up">
-                    <h4>Software Developer</h4>
-                    <h5>KrishnaStore.com</h5>
-                    <p class="text-muted">Apr 2021 - Jun 2021</p>
-                    <p>Troubleshot eCommerce site and managed various projects including a music streaming platform.</p>
-                    <div class="tech-stack">
-                        <small>Technologies: PHP, MySQL, API, WordPress</small>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-up">
-                    <h4>Freelance Programmer</h4>
-                    <h5>Self-Employed</h5>
-                    <p class="text-muted">Jan 2018 - Present</p>
-                    <p>Delivered custom software solutions across diverse industries including accounting, casino/gambling, retail, medical, banking, and logistics.</p>
-                    <div class="tech-stack">
-                        <small>Technologies: PHP, Laravel, NodeJS, SlimPHP, LithiumPHP, VueJS, MySQL, MongoDB, AWS, WordPress, Magento, Lumen</small>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-up">
-                    <h4>IT Staff / Programmer</h4>
-                    <h5>VCY Group</h5>
-                    <p class="text-muted">Mar 2016 - Oct 2018</p>
-                    <p>SAP ABAP Programmer and IT technical support. Also worked as a photographer.</p>
-                    <div class="tech-stack">
-                        <small>Technologies: PHP, MySQL, SAP ABAP, Laravel</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">My Projects</h2>
-            <div class="row g-4">
-                <!-- Project Card 1 -->
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="card project-card">
-                        <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Project 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Project One</h5>
-                            <p class="card-text">A brief description of your first project goes here.</p>
-                            <a href="#" class="btn btn-primary">Learn More</a>
+                <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="80">
+                    <article class="project-card card border-0 h-100">
+                        <a href="https://www.craftdirect.com/" class="project-card__link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-card__media ratio ratio-16x9">
+                                <img src="assets/project-screenshots/craftdirect.jpg" width="1280" height="720" class="project-card__img" alt="CraftDirect homepage screenshot" loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold">CraftDirect</h5>
+                            <p class="card-text text-secondary flex-grow-1 small">Craft &amp; scrapbooking retailer — dense SKU catalog, promotions, and storefront UX.</p>
+                            <a href="https://www.craftdirect.com/" class="btn btn-outline-dark btn-sm rounded-pill align-self-start mt-2" target="_blank" rel="noopener noreferrer">Visit site <span class="fa-solid fa-arrow-up-right-from-square ms-1 small" aria-hidden="true"></span></a>
                         </div>
-                    </div>
+                    </article>
                 </div>
-                <!-- Add more project cards as needed -->
+                <div class="col-md-6 col-xl-4" data-aos="fade-up">
+                    <article class="project-card card border-0 h-100">
+                        <a href="https://mexplay.mx/" class="project-card__link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-card__media ratio ratio-16x9">
+                                <img src="assets/project-screenshots/mexplay.jpg" width="1280" height="720" class="project-card__img" alt="MexPlay homepage screenshot" loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold">MexPlay</h5>
+                            <p class="card-text text-secondary flex-grow-1 small">Mexico-facing igaming web presence — performance-sensitive frontend and secure integrations.</p>
+                            <a href="https://mexplay.mx/" class="btn btn-outline-dark btn-sm rounded-pill align-self-start mt-2" target="_blank" rel="noopener noreferrer">Visit site <span class="fa-solid fa-arrow-up-right-from-square ms-1 small" aria-hidden="true"></span></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="40">
+                    <article class="project-card card border-0 h-100">
+                        <a href="https://www.transdirect.com.au/" class="project-card__link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-card__media ratio ratio-16x9">
+                                <img src="assets/project-screenshots/transdirect.jpg" width="1280" height="720" class="project-card__img" alt="Transdirect homepage screenshot" loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold">Transdirect</h5>
+                            <p class="card-text text-secondary flex-grow-1 small">Australian logistics &amp; freight — quoting, bookings, and operational web tooling.</p>
+                            <a href="https://www.transdirect.com.au/" class="btn btn-outline-dark btn-sm rounded-pill align-self-start mt-2" target="_blank" rel="noopener noreferrer">Visit site <span class="fa-solid fa-arrow-up-right-from-square ms-1 small" aria-hidden="true"></span></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="80">
+                    <article class="project-card card border-0 h-100">
+                        <a href="https://krishnastore.com/" class="project-card__link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-card__media ratio ratio-16x9">
+                                <img src="assets/project-screenshots/krishnastore.jpg" width="1280" height="720" class="project-card__img" alt="Krishna Store homepage screenshot" loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold">Krishna Store</h5>
+                            <p class="card-text text-secondary flex-grow-1 small">Specialty ecommerce — books, apparel, devotional goods, and complex category navigation.</p>
+                            <a href="https://krishnastore.com/" class="btn btn-outline-dark btn-sm rounded-pill align-self-start mt-2" target="_blank" rel="noopener noreferrer">Visit site <span class="fa-solid fa-arrow-up-right-from-square ms-1 small" aria-hidden="true"></span></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-xl-4" data-aos="fade-up">
+                    <article class="project-card card border-0 h-100">
+                        <a href="https://bacolodtriumph.com/" class="project-card__link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-card__media ratio ratio-16x9">
+                                <img src="assets/project-screenshots/bacolodtriumph.jpg" width="1280" height="720" class="project-card__img" alt="Bacolod Triumph Hardware homepage screenshot" loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold">Bacolod Triumph Hardware</h5>
+                            <p class="card-text text-secondary flex-grow-1 small">Construction materials distributor — corporate site, branches, and project showcases.</p>
+                            <a href="https://bacolodtriumph.com/" class="btn btn-outline-dark btn-sm rounded-pill align-self-start mt-2" target="_blank" rel="noopener noreferrer">Visit site <span class="fa-solid fa-arrow-up-right-from-square ms-1 small" aria-hidden="true"></span></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="40">
+                    <article class="project-card card border-0 h-100">
+                        <a href="https://triumphhomedepot.com/" class="project-card__link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-card__media ratio ratio-16x9">
+                                <img src="assets/project-screenshots/triumphhomedepot.jpg" width="1280" height="720" class="project-card__img" alt="Triumph Home Depot homepage screenshot" loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold">Triumph Home Depot</h5>
+                            <p class="card-text text-secondary flex-grow-1 small">Retail/home-improvement digital presence aligned with the Triumph hardware family of brands.</p>
+                            <a href="https://triumphhomedepot.com/" class="btn btn-outline-dark btn-sm rounded-pill align-self-start mt-2" target="_blank" rel="noopener noreferrer">Visit site <span class="fa-solid fa-arrow-up-right-from-square ms-1 small" aria-hidden="true"></span></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="80">
+                    <article class="project-card card border-0 h-100">
+                        <a href="https://catchaguide.com/" class="project-card__link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-card__media ratio ratio-16x9">
+                                <img src="assets/project-screenshots/catchaguide.jpg" width="1280" height="720" class="project-card__img" alt="Catch A Guide homepage screenshot" loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold">Catch A Guide</h5>
+                            <p class="card-text text-secondary flex-grow-1 small">Guided fishing marketplace — discovery, geo-rich listings, and booking-oriented UX.</p>
+                            <a href="https://catchaguide.com/" class="btn btn-outline-dark btn-sm rounded-pill align-self-start mt-2" target="_blank" rel="noopener noreferrer">Visit site <span class="fa-solid fa-arrow-up-right-from-square ms-1 small" aria-hidden="true"></span></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-xl-4" data-aos="fade-up">
+                    <article class="project-card card border-0 h-100">
+                        <a href="https://roobby.com/" class="project-card__link" target="_blank" rel="noopener noreferrer">
+                            <div class="project-card__media ratio ratio-16x9">
+                                <img src="assets/project-screenshots/roobby.jpg" width="1280" height="720" class="project-card__img" alt="Roobby homepage screenshot" loading="lazy" decoding="async">
+                            </div>
+                        </a>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold">Roobby</h5>
+                            <p class="card-text text-secondary flex-grow-1 small">Tokyu-linked hobby rental-space brand — Japanese locale content and promotional storytelling.</p>
+                            <a href="https://roobby.com/" class="btn btn-outline-dark btn-sm rounded-pill align-self-start mt-2" target="_blank" rel="noopener noreferrer">Visit site <span class="fa-solid fa-arrow-up-right-from-square ms-1 small" aria-hidden="true"></span></a>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
+    <!-- Contact -->
+    <section id="contact" class="section section--dark">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-5" data-aos="fade-right">
-                    <h2 class="contact-title">Contact</h2>
-                    <h1 class="connect-text">Let's<br>connect</h1>
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-5" data-aos="fade-up">
+                    <p class="section-eyebrow section-eyebrow--on-dark">Contact</p>
+                    <h2 class="display-5 fw-semibold text-white mb-3 connect-heading">Let’s build<br>something solid.</h2>
+                    <p class="text-white-50 mb-4">Tell me about the problem space, timelines, and constraints — I typically reply within one business day.</p>
 
-                    <div class="contact-info mt-5">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
+                    <div class="contact-info mt-4">
+                        <div class="contact-item contact-item--dark">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                             <div>
-                                <p class="label">Email us</p>
-                                <p class="value">lesterbonbiono@gmail.com</p>
+                                <p class="label">Email</p>
+                                <p class="value mb-0">lesterbonbiono@gmail.com</p>
                             </div>
                         </div>
-
-                        <div class="contact-item">
-                            <i class="fab fa-whatsapp"></i>
+                        <div class="contact-item contact-item--dark">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
                             <div>
-                                <p class="label">Call us</p>
-                                <p class="value">+63 9959730541</p>
+                                <p class="label">Phone</p>
+                                <p class="value mb-0">+63 9919697516</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-7" data-aos="fade-left">
-                    <form id="contactForm" class="contact-form">
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="80">
+                    <form id="contactForm" class="contact-form contact-form--elevated">
                         <div class="row">
                             <div class="col-md-6 mb-4">
-                                <label>Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Your name*" required>
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Your name*" required autocomplete="name">
                             </div>
                             <div class="col-md-6 mb-4">
-                                <label>Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Your email*" required>
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Your email*" required autocomplete="email">
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-6 mb-4">
-                                <label>Phone</label>
-                                <input type="tel" class="form-control" id="phone" placeholder="Your number">
+                                <label for="phone">Phone</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Your number" autocomplete="tel">
                             </div>
                             <div class="col-md-6 mb-4">
-                                <label>Subject</label>
+                                <label for="subject">Subject</label>
                                 <input type="text" class="form-control" id="subject" placeholder="Your subject*" required>
                             </div>
                         </div>
-
                         <div class="mb-4">
-                            <label>Message</label>
-                            <textarea class="form-control" id="message" rows="5" placeholder="Type your message" required></textarea>
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Share context, links, or milestones" required></textarea>
                         </div>
-
                         <button type="submit" class="btn btn-submit" id="submitButton">
-                            Submit
-                            <i class="fas fa-arrow-right"></i>
-                            <div class="spinner-border spinner-border-sm ms-2 d-none" role="status">
+                            Send message
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            <span class="spinner-border spinner-border-sm ms-2 d-none" role="status">
                                 <span class="visually-hidden">Loading...</span>
-                            </div>
+                            </span>
                         </button>
-
                         <div class="alert mt-3 d-none" id="alertMessage" role="alert"></div>
                     </form>
                 </div>
@@ -308,27 +662,25 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <div class="social-icons mb-3">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__inner">
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/lesterb16/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/devlest" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://gitlab.com/DevLest" target="_blank" rel="noopener noreferrer" aria-label="GitLab"><i class="fab fa-gitlab"></i></a>
+                </div>
+                <p class="mb-0 small text-secondary">&copy; <span id="yearCopy"></span> Lester bon Biono. All rights reserved.</p>
             </div>
-            <p>&copy; 2025 Lester bon Biono. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
     <script src="script.js"></script>
 
-    <!-- Add this just before the closing </body> tag -->
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-chevron-up"></i>
+    <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 </body>
 
